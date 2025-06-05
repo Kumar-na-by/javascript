@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inserting and removing</title>
     <style>
-        .box{
-            /* font-size: ; */
-        }
     </style>
 </head>
 <body>
     <div class="container">
+
         <div class="box" id="hello" style="color: blue;">hello</div>
         <div class="box">how</div>
         <div class="box">are</div>
         <div class="box">you??</div>
+        
     </div>
+
     <script>
         // 1. innerhtml se text output me aata hai
         // let inn = document.querySelector(".box").innerHTML
@@ -32,17 +32,21 @@
         // let inn = document.querySelector(".box").setAttribute("style", "font-Size : 20px")
         // let inn = document.querySelector(".box").removeAttribute("style")
         // let inn = document.querySelector(".box").attributes
-
-
+        // console.log(inn)
 
         // let inert = document.createElement("div");
         // console.log(inert)
         // inert.innerHTML ="uuuuuuuuuuuuuu"
-        // inert.setAttribute("class","rahul")
+        // inert.setAttribute("class","kumar")
         // console.log(inert)
 
+        // let p = document.querySelector(".container").prepend(inert) //container se phle lg jayega
+        // let p = document.querySelector(".container").append(inert) // container ka last child bn jayega
+        // let p = document.querySelector(".container").before(inert)  //container se phle lg jayega 
+        // let p = document.querySelector(".container").after(inert)  //container ke last me  lg jayega 
+        // let p = document.querySelector(".container").replaceWith(inert)  //container ke ander ke phle box ko replace krd dega 
+        // console.log(p)
 
-        console.log(inn)
 
 
     </script>
