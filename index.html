@@ -4,21 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container{
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+        }
+    </style>
 </head>
 <body>
-    <div class="dropdown">Hover over me
-        <ul class="dropdown-content">
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li class="again">Item 3
-                <ul class="again-content">
-                    <li>Sub-item 1</li>
-                    <li>Sub-item 2</li>
-                    <li>Sub-item 3</li>
-                </ul>
-            </li>
-        </ul>
+    <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box" id="red">4</div>
+        <div class="box">5</div>
     </div>
+<!-- 1. getElementById 
+    2. getElementsByClassName
+    3. getElementsByTagName
+    4. querySelector
+    5. querySelectorAll
+    -->
+
+    <script>
+        // 1. getElementById
+        // let box1 =  document.getElementById("red").style.backgroundColor = "red";
+        // console.log(box1);
+
+        // 2. getElementsByClassName
+        // const boxes = document.getElementsByClassName("box");
+        // console.log(boxes);
+        // boxes[2].style.backgroundColor = "blue";
+        // boxes[2].style.fontSize = "200px";
+        // boxes[2].style.border = "20px soild red";
+
+        // 3. getElementsByTagName
+        // let bol = document.getElementsByTagName("div")
+        // console.log(bol);
+        // bol[4].
+        // bol[4].style.backgroundColor = "blue"
+
+        // 4. querySelector
+        // let querybox = document.querySelector(".box");  //vo box select kr do jiski class box ho
+        // console.log(querybox);
+        // querybox.style.backgroundColor = "green";
+
+        // 5. querySelectorAll
+        // let queryAll = document.querySelectorAll(".box")
+        // console.log(queryAll);
+
+        let queryAll = document.querySelectorAll(".box").forEach(e =>{
+                 e.style.backgroundColor = "yellow";
+                 console.log(e)
+            });
+            // forEach(e => {
+            
+            // });
+
+
+
+            // inserting and removing elements
+            // let container = document.getElementById("red").innerHTML;
+            // let container = document.getElementById("red").outerHTML;
+            // let container = document.getElementById("red").tagName;
+            // let container = document.getElementById("red").nodeName;
+            // let container = document.getElementById("red").textContent;
+            // let container = document.getElementById("red").innerText;
+            // let container = document.getElementById("red").;
+            // console.log(container);
+    </script>
 </body>
 </html>
