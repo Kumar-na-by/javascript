@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box">hey i am the boss</div>
+  </div>
+  <button id="btn">Click me</button>
+  <script>
+
+    let button = document.getElementById("btn");
+    button.addEventListener("dblclick",()=>{
+      // alert("aaj class nhi hogi")
+      document.querySelector(".box").innerHTML = "hey hi how are you??"
+      document.querySelector(".box").style.color = "red"
+    });
+
+    // "click" => jab user button pe click kare
+    // () => {...} => arrow function hai => jab click hoga, ye function chelega
+
+    // EventListener
+    //   button.addEventListener("ctrlKey", () => {
+    // alert("hello mene click kr diya hai")
+    // document.querySelector(".box").innerHTML = "hello how are you";
+    //   });
+
+    // button.addEventListener("click",(e)=>{
+    // button.textContent = `Click count: ${e.detail}`;
+    // })
+
+
+    //   Keyboard button ke liye hota hai
+    document.addEventListener("keydown",(p)=>{
+    console.log(p.key,p.keyCode)  // p.key se keyboard ki key print hogi or keycode se code bhi print hoga
+    })
+
+    // Properties:
+    // dblclick => ise double hone pr content change hoga
+
+    // sources
+    // https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent
+  </script>
+</body>
+
+</html>
