@@ -1,0 +1,24 @@
+settle means resolve or reject
+
+resolve means promise has settled successfully
+reject means promise has not settled successfully
+
+| Method      | Purpose (Kya karta hai?)                                    | Example Use Case                    |
+| ----------- | ----------------------------------------------------------- | ----------------------------------- |
+| **GET**     | 🔍 Server se data **mangta hai**                            | User ki detail ya product list lena |
+| **POST**    | ➕ Server pe **naya data bhejta hai**                        | Naya user register karna            |
+| **PUT**     | ♻️ Purane data ko **completely update** karta hai           | Profile poora update karna          |
+| **PATCH**   | 🩹 Sirf **thoda sa data update** karta hai                  | Sirf email ya password update karna |
+| **DELETE**  | ❌ Server se **data delete** karta hai                       | Account delete karna                |
+| **HEAD**    | 🔍 Sirf headers deta hai, body nahi                         | Fast check without downloading data |
+| **OPTIONS** | ❓ Server se batata hai ki kaun kaun se methods allowed hain | Cross-origin request check          |
+
+
+🔧 Most Common Used (Top 4)
+GET – Data lena
+
+POST – Data bhejna
+
+PUT – Pura object update
+
+DELETE – Data delete karna
