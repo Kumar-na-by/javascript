@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // IIFE (Immediately Invoked Function Expression):-
+        //  What is IIFE?
+        // 📌 IIFE stands for:
+        // Immediately Invoked Function Expression
+        // (मतलब: Function ko turant hi call karna, bina naam diye ya use store kiye)
+
+        // ✅ Syntax of IIFE:
+        // (function () {
+        //   console.log("I am IIFE");
+        // })();
+
+        // async function sleep() {
+        //     return new Promise((resolve, reject)=>{
+        //         setTimeout(() => {
+        //             resolve(45)
+        //         }, 10);
+        //     })
+        // }
+        // (async function (){
+        //     let a = await sleep()
+        //     console.log(a)
+        // })();
+
+        // sleep()
+
+        //   #2  // Destructuring – Objects ya arrays se values nikalna easily
+        // Destructuring ka matlab hota hai – kisi object ya array ke andar se values nikal ke alag variables me assign karna in a short & clean way.
+
+        // let a,b = [1,2]
+        // let [a,b]=[1,2]
+        // console.log(a,b)
+
+        // let [a,b,...rest] = [1,2,3.2,4,5,6,7]
+        // console.log(...rest)
+
+        // object ke ander
+        // const obj ={
+        //     a:120,
+        //     b:2
+        // }
+        // let {a,b}= obj
+        // console.log(a,b)
+
+
+        // #3 // spread operater
+        // Spread Operator (...) ka use kisi array, object, ya iterable ko expand (phailane) ke liye hota hai.
+        // 🧠 Iska matlab:
+        // Jab aapko kisi array ya object ke elements ko alag-alag karna ho ya combine karna ho — tab ... ka use hota hai.
+        // let arr1 = [1, 2];
+        // let arr2 = [3, 4];
+        // let merged = [...arr1, ...arr2];
+        // console.log(merged); // [1, 2, 3, 4]
+
+        // let obj1 = { name: "Naveen" };
+        // let obj2 = { age: 22 };
+        // let user = { ...obj1, ...obj2 };
+        // console.log(user); // { name: 'Naveen', age: 22 }
+
+        // Overwrite Properties:
+        // let user = { 
+        //     name: "Amit",
+        //      aage: 25 
+        // };
+        // let updatedUser = { ...user, age: 30 };
+        // console.log(updatedUser); // { name: 'Amit', age: 30 }
+        // ⚠️ Last value overwrite karti hai pehle wali ko (agar same key hai)
+
+
+        // ############ Local, Block aur Global Scope
+        // ✅ 1. Global Scope
+        // 📌 Definition:
+        // Variable jo program ke har jagah accessible ho, usko Global Scope kehte hain.
+        // let name = "Naveen"; // Global scope
+
+        // function greet() {
+            // console.log(name); // Accessible here
+        // }
+
+        // greet(); // Output: Naveen
+        // console.log(name); // Accessible here too
+        // ✔ Function ke andar bhi accessible hai
+        // ✔ Bahar bhi
+
+        // ✅ 2. Local Scope (Function Scope)
+// 📌 Definition:
+// Jo variable sirf ek function ke andar hi kaam kare, use local ya function scope kehte hain.
+// function sayHello() {
+//   let greeti = "Hello!";
+//   console.log(greeting); // ✅ Accessible here
+// }
+
+// sayHello();
+// console.log(greeting); //❌ Error: Not defined
+// ❌ Function ke bahar greeting access nahi ho sakta.
+
+// ✅ 3. Block Scope
+// 📌 Definition:
+// Block { } ke andar jo variable banate ho (let, const), wo sirf us block me hi kaam kare — isse kehte hain block scope.
+//{
+  //let a = 10;
+  //const b = 20;
+//   console.log(a, b); // ✅ Accessible here
+// }
+
+// 🧠 var block scope nahi manta — wo sirf function scope follow karta hai.
+
+// console.log(a); ❌ Error
+// console.log(b); ❌ Error
+
+
+// | Scope Type   | Defined Where?                  | Accessible Where?         |
+// | ------------ | ------------------------------- | ------------------------- |
+// | Global Scope | Program ke bahar                | Kahin bhi                 |
+// | Local Scope  | Function ke andar               | Sirf us function ke andar |
+// | Block Scope  | `{ }` ke andar (with let/const) | Sirf us block ke andar    |
+
+
+// ################// Hoisting
+    // Matlab:
+// 🔁 Declaration pehle ho jaata hai, par initialization baad me hota hai.
+// console.log(a); // Output: undefined
+// var a = 10;
+
+// 🧠 JavaScript isko aise samajhta hai:
+// var a;
+// console.log(a); // undefined
+// a = 10;
+
+// var ka declaration ho gaya upar, but value assign baad me hui
+// var a;
+// console.log(a); // undefined
+// a = 10;
+
+// ❌ let aur const me hoisting hoti hai, but they are not initialized
+
+
+    </script>
+</body>
+
+</html>
