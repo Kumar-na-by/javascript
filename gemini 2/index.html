@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Adwik Creators - Digital Content Creation, Branding & Marketing Services. We Create. You Grow.">
+    <meta name="keywords" content="Adwik Creators, logo design, video editing, social media marketing, branding strategy, content creation, digital marketing, YouTube, Instagram">
+    <meta name="author" content="Adwik Creators">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/833/833472.png" type="image/png">
+    <title>Adwik Creators - Digital Content & Branding Solutions</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <style>
+        /* CSS Variables for easy theme changes */
+        :root {
+            --primary: #FF6B00; /* Vibrant Orange */
+            --primary-light: #FFB347; /* Lighter Orange for gradients */
+            --secondary: #1A1A1A; /* Dark background */
+            --tertiary: #2C2C2C; /* Slightly lighter dark for sections */
+            --accent: #E0E0E0; /* Off-white for text */
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --text-color: var(--accent);
+            --success-color: #28a745;
+            --error-color: #dc3545;
+        }
+
+        /* Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(to bottom right, #0a0a0a, #1a1a1a); /* Dark gradient background */
+            background-size: cover;
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            animation: fadeIn 1s ease-in;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, .nav-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700; /* Bold for headings */
+            color: var(--primary);
+        }
+
+        h1 { font-size: 3.5rem; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); }
+        h2 { font-size: 2.8rem; text-align: center; margin-bottom: 50px; }
+        h3 { font-size: 1.8rem; }
+        h4 { font-size: 1.3rem; }
+
+        p { margin-bottom: 1rem; }
+
+        /* General Animations */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideInDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+        /* Loader */
+        .loader {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: var(--secondary);
+            color: var(--primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+            gap: 15px;
+        }
+        .loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: var(--accent);
+            padding: 80px 20px; /* Increased padding */
+            text-align: center;
+            animation: slideInDown 1s ease-in-out;
+            border-bottom: 1px solid var(--glass-border);
+            position: relative;
+            overflow: hidden; /* For particles */
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0; /* Behind content */
+        }
+        header .content {
+            position: relative;
+            z-index: 1; /* Above particles */
+        }
+        header p {
+            font-size: 1.4rem; /* Larger tagline */
+            color: var(--primary-light);
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        .glass-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            backdrop-filter: blur(20px); /* Increased blur */
+            background: var(--glass-bg);
+            border-bottom: 1px solid var(--glass-border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-brand {
+            font-size: 1.8rem; /* Larger brand name */
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: transform 0.3s ease;
+        }
+        .nav-brand:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px; /* Increased gap */
+        }
+
+        .nav-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 18px; /* More padding */
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, var(--primary), transparent);
+            transition: all 0.4s ease-in-out;
+            z-index: -1;
+        }
+
+        .nav-links a:hover::before {
+            left: 0;
+        }
+        .nav-links a:hover {
+            color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.4);
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 32px; /* Larger icon */
+            color: var(--primary);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .hamburger:hover {
+            transform: scale(1.1);
+        }
+
+        /* Main Sections */
+        .section {
+            padding: 100px 20px; /* More vertical padding */
+            max-width: 1200px;
+            margin: 60px auto; /* More margin */
+            background-color: var(--tertiary);
+            border-radius: 20px; /* More rounded */
+            box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4); /* Stronger glass-like shadow */
+            border: 1px solid var(--glass-border);
+            animation: fadeIn 1.5s ease-in;
+            position: relative;
+            overflow: hidden;
+        }
+        .section-light {
+            background-color: var(--secondary);
+        }
+
+        /* Animations for sections */
+        [data-animate] {
+            opacity: 0;
+            transform: translateY(50px); /* Larger slide amount */
+            transition: all 0.9s ease-out; /* Slower transition */
+        }
+
+        [data-animate].visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* About Section */
+        .about p {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.15rem; /* Slightly larger text */
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Slightly wider min */
+            gap: 30px; /* More gap */
+            margin-top: 40px;
+        }
+        .service-item {
+            background-color: var(--glass-bg);
+            padding: 30px; /* More padding */
+            border-radius: 15px; /* More rounded */
+            border-left: 6px solid var(--primary); /* Thicker border */
+            color: var(--accent);
+            transition: all 0.4s ease; /* Slower transition */
+            text-align: center;
+            cursor: pointer;
+        }
+        .service-item:hover {
+            transform: translateY(-8px) scale(1.02); /* More pronounced lift and slight scale */
+            box-shadow: 0 0 25px rgba(255, 107, 0, 0.7); /* Stronger glow */
+        }
+        .service-item i {
+            font-size: 3rem; /* Larger icon */
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .service-item h3 {
+            margin-bottom: 12px;
+            color: var(--accent);
+            font-weight: 700; /* Bold service titles */
+        }
+
+        /* Pricing Section */
+        .pricing-cards {
+            display: flex;
+            gap: 40px; /* More gap */
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: var(--glass-bg);
+            padding: 35px; /* More padding */
+            border: 3px solid var(--primary); /* Thicker border */
+            border-radius: 25px; /* Even more rounded corners */
+            width: 350px; /* Wider cards */
+            text-align: center;
+            transition: transform 0.5s ease, box-shadow 0.5s ease; /* Slower transitions */
+            backdrop-filter: blur(10px); /* Increased blur */
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-15px); /* Lift higher on hover */
+            box-shadow: 0 15px 30px rgba(255, 107, 0, 0.6); /* Stronger glow */
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+        }
+
+        .card h4 {
+            font-size: 2.5rem; /* Larger price */
+            margin-bottom: 30px;
+            color: var(--accent);
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .card ul li {
+            padding: 10px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.25); /* Stronger dashed line */
+            color: var(--accent);
+            font-size: 1.1rem; /* Slightly larger list item text */
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card ul li:last-child {
+            border-bottom: none;
+        }
+        .card ul li i {
+            font-size: 1.2rem;
+        }
+
+        .card button, .card a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 14px 30px; /* More padding */
+            background: linear-gradient(45deg, var(--primary), var(--primary-light));
+            color: var(--secondary);
+            text-decoration: none;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem; /* Larger button text */
+            cursor: pointer;
+            transition: all 0.4s ease; /* Slower transition */
+            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
+        }
+
+        .card button:hover, .card a:hover {
+            transform: scale(1.1); /* More pronounced scale */
+            box-shadow: 0 8px 20px rgba(255, 107, 0, 0.8); /* Stronger glow */
+        }
+        .pricing-terms {
+            text-align: center;
+            margin-top: 40px; /* More margin */
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Clients Section (Grid based) */
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Slightly larger min */
+            gap: 40px; /* More gap */
+            justify-items: center;
+            align-items: center;
+            padding: 30px;
+        }
+        .clients-grid img {
+            max-width: 90%;
+            height: auto;
+            opacity: 0.6; /* More faded initially */
+            filter: grayscale(100%) brightness(0.7); /* Darker grayscale */
+            transition: all 0.4s ease;
+        }
+        .clients-grid img:hover {
+            opacity: 1;
+            filter: grayscale(0%) brightness(1);
+            transform: scale(1.1); /* More pronounced scale */
+        }
+
+        /* Portfolio Gallery */
+        .gallery-controls {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .gallery-controls button {
+            background: var(--glass-bg);
+            color: var(--primary-light);
+            border: 1px solid var(--primary);
+            padding: 10px 20px;
+            margin: 0 8px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        .gallery-controls button:hover, .gallery-controls button.active {
+            background: var(--primary);
+            color: var(--secondary);
+            box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Larger min width */
+            gap: 30px; /* More gap */
+            margin-top: 40px;
+            justify-items: center;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px; /* More rounded */
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4); /* Stronger shadow */
+            transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.5s ease;
+            cursor: pointer;
+            /* For filtering */
+            display: block; /* Default state */
+        }
+        .gallery-item.hidden {
+            display: none;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 220px; /* Slightly taller images */
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1); /* More pronounced scale */
+        }
+        .gallery-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85); /* Darker overlay */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            font-weight: 700; /* Bolder text */
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 15px;
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        /* Lazy loading placeholder style */
+        .gallery-item img[data-src] {
+            background-color: var(--tertiary); /* Placeholder background */
+            filter: blur(5px); /* Visual cue for loading */
+            transition: filter 0.5s ease;
+        }
+        .gallery-item img.loaded {
+            filter: blur(0);
+        }
+
+
+        /* Testimonials Swiper */
+        .testimonial-swiper {
+            width: 100%;
+            padding-bottom: 50px; /* Space for pagination */
+        }
+        .testimonial-card {
+            background-color: var(--glass-bg);
+            padding: 30px; /* More padding */
+            border-radius: 15px; /* More rounded */
+            border-left: 5px solid var(--primary-light);
+            margin-bottom: 20px;
+            font-style: italic;
+            position: relative;
+            min-height: 200px; /* Ensure consistent height */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        .testimonial-card::before {
+            font-size: 2.5rem; /* Larger icon */
+            top: 20px;
+            left: 15px;
+            color: rgba(255, 107, 0, 0.2); /* Softer opacity */
+        }
+        .testimonial-card p {
+            margin-bottom: 10px;
+            font-size: 1.15rem; /* Slightly larger text */
+            position: relative;
+            z-index: 1;
+        }
+        .testimonial-card span {
+            display: block;
+            text-align: right;
+            font-weight: 700; /* Bolder name */
+            color: var(--primary-light);
+            font-style: normal;
+            margin-top: 15px;
+            font-size: 1.05rem;
+        }
+        /* Swiper Pagination & Navigation Customization */
+        .testimonial-swiper .swiper-pagination-bullet {
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 1;
+        }
+        .testimonial-swiper .swiper-pagination-bullet-active {
+            background: var(--primary);
+            transform: scale(1.2);
+        }
+        .testimonial-swiper .swiper-button-next,
+        .testimonial-swiper .swiper-button-prev {
+            color: var(--primary);
+            font-size: 2.5rem; /* Larger arrows */
+            transition: transform 0.3s ease;
+        }
+        .testimonial-swiper .swiper-button-next:hover,
+        .testimonial-swiper .swiper-button-prev:hover {
+            transform: scale(1.1);
+        }
+
+
+        /* Blog/Articles - With Read More */
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px; /* More gap */
+        }
+        .blog-post-item {
+            background-color: var(--glass-bg);
+            padding: 25px; /* More padding */
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-light);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .blog-post-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 107, 0, 0.4);
+        }
+        .blog-post-item a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem; /* Larger title */
+            display: block;
+            margin-bottom: 10px;
+        }
+        .blog-post-item a:hover {
+            color: var(--primary);
+        }
+        .blog-post-item .content-wrapper {
+            max-height: 90px; /* Initial height for truncated text */
+            overflow: hidden;
+            position: relative;
+            transition: max-height 0.5s ease-out;
+        }
+        .blog-post-item .content-wrapper.expanded {
+            max-height: 500px; /* Large enough to show full content */
+        }
+        .blog-post-item .content-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px; /* Gradient fade height */
+            background: linear-gradient(to top, var(--glass-bg), transparent);
+            pointer-events: none; /* Allow interaction with text below */
+        }
+        .blog-post-item .content-wrapper.expanded::after {
+            background: none; /* Remove gradient when expanded */
+        }
+        .blog-post-item p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.75);
+            margin-top: 5px;
+            margin-bottom: 0; /* No margin here, button below */
+        }
+        .blog-post-item .read-more-btn {
+            display: block;
+            background: none;
+            border: none;
+            color: var(--primary-light);
+            font-weight: 600;
+            cursor: pointer;
+            padding: 5px 0;
+            margin-top: 10px;
+            text-align: left;
+            transition: color 0.3s ease;
+        }
+        .blog-post-item .read-more-btn:hover {
+            color: var(--primary);
+        }
+
+
+        /* FAQ */
+        .faq details {
+            margin: 20px 0; /* More margin */
+            padding: 20px 25px; /* More padding */
+            background: var(--glass-bg);
+            border-radius: 12px; /* More rounded */
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+        }
+        .faq details:hover {
+            box-shadow: 0 0 15px rgba(255, 107, 0, 0.4);
+        }
+        .faq summary {
+            font-weight: 700;
+            cursor: pointer;
+            color: var(--primary);
+            font-size: 1.2rem; /* Larger summary text */
+            outline: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        .faq summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq summary::before {
+            content: '\f054';
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-right: 15px; /* More margin */
+            transition: transform 0.2s ease;
+            color: var(--primary-light);
+        }
+        .faq details[open] summary::before {
+            transform: rotate(90deg);
+        }
+        .faq details p {
+            padding-top: 15px; /* More padding */
+            margin-left: 35px; /* More indent */
+            border-top: 1px dashed rgba(255, 255, 255, 0.15); /* Stronger dashed line */
+            margin-top: 15px;
+            font-size: 1.05rem;
+        }
+
+        /* Contact Form */
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px; /* More gap */
+            justify-content: center;
+        }
+        .contact-info, .contact-form {
+            flex: 1;
+            min-width: 320px; /* Slightly larger min-width */
+        }
+        .contact-info h3 {
+            margin-bottom: 25px; /* More margin */
+            color: var(--accent);
+        }
+        .contact-info p {
+            font-size: 1.15rem; /* Larger text */
+            margin-bottom: 18px; /* More margin */
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .contact-info i {
+            color: var(--primary-light);
+            font-size: 1.3rem;
+        }
+        .contact-info a {
+            color: var(--primary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .contact-info a:hover {
+            color: var(--primary);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* More gap */
+            background: var(--glass-bg);
+            padding: 35px; /* More padding */
+            border-radius: 15px;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 10px; /* Adjust spacing as needed */
+        }
+        .form-group input, .form-group textarea {
+            width: 100%; /* Ensure they take full width */
+            padding: 16px; /* More padding */
+            border-radius: 10px; /* More rounded */
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            background-color: rgba(255, 255, 255, 0.08); /* Slightly less transparent */
+            color: var(--accent);
+            font-size: 1.05rem;
+            outline: none;
+            transition: border-color 0.3s ease, background-color 0.3s ease;
+            padding-right: 45px; /* Space for icon */
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--primary);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px; /* Taller textarea */
+        }
+        .form-group .validation-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            display: none; /* Hidden by default */
+        }
+        .form-group input.valid, .form-group textarea.valid {
+            border-color: var(--success-color);
+        }
+        .form-group input.invalid, .form-group textarea.invalid {
+            border-color: var(--error-color);
+        }
+        .form-group input.valid + .validation-icon,
+        .form-group textarea.valid + .validation-icon {
+            display: block;
+            color: var(--success-color);
+        }
+        .form-group input.invalid + .validation-icon,
+        .form-group textarea.invalid + .validation-icon {
+            display: block;
+            color: var(--error-color);
+        }
+
+
+        form button {
+            padding: 16px;
+            background: linear-gradient(45deg, var(--primary), var(--primary-light));
+            color: var(--secondary);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.4s ease;
+        }
+        form button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 107, 0, 0.7);
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp {
+            position: fixed;
+            bottom: 40px; /* More bottom margin */
+            right: 40px; /* More right margin */
+            background-color: #25D366;
+            color: white;
+            padding: 18px 30px; /* More padding */
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem; /* Larger text */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            animation: pulse 2s infinite;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 999;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .whatsapp:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+        .whatsapp i {
+            font-size: 1.6rem; /* Larger icon */
+        }
+
+        /* Scroll To Top Button */
+        #scrollToTopBtn {
+            display: none; /* Hidden by default */
+            position: fixed;
+            bottom: 40px; /* Same as WhatsApp button */
+            left: 40px; /* Position on left */
+            z-index: 998; /* Below WhatsApp */
+            background: var(--primary);
+            color: var(--secondary);
+            border: none;
+            border-radius: 50%;
+            width: 55px; /* Larger button */
+            height: 55px; /* Larger button */
+            font-size: 1.8rem; /* Larger icon */
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+        #scrollToTopBtn:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            opacity: 1;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px; /* More padding */
+            background-color: rgba(0, 0, 0, 0.75); /* Slightly darker */
+            color: rgba(255, 255, 255, 0.9); /* Lighter text */
+            margin-top: auto;
+            border-top: 1px solid var(--glass-border);
+        }
+        .social-links {
+            margin-bottom: 20px;
+        }
+        .social-links a {
+            color: white;
+            font-size: 1.8rem; /* Larger icons */
+            margin: 0 15px; /* More space */
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .social-links a:hover {
+            color: var(--primary);
+            transform: translateY(-3px) scale(1.1);
+        }
+        footer p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Dark Mode Toggle Button Styling */
+        #darkModeToggle {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            z-index: 999;
+            background: var(--primary);
+            color: var(--secondary);
+            border: none;
+            padding: 12px 18px; /* More padding */
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+        }
+        #darkModeToggle:hover {
+            background: var(--primary-light);
+            transform: scale(1.08);
+        }
+
+
+        /* Media Queries for Responsiveness */
+        @media screen and (max-width: 992px) {
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2.2rem; }
+            .section { padding: 80px 15px; margin: 40px auto; }
+            .pricing-cards, .gallery-grid, .clients-grid, .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 25px;
+            }
+            .card { width: 300px; padding: 30px;}
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 75px; /* Adjust based on nav height */
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.98); /* Even darker for mobile menu */
+                border-radius: 0 0 15px 15px;
+                padding: 20px 0;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .nav-links a {
+                display: block;
+                padding: 15px 20px;
+                text-align: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            }
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+            .hamburger {
+                display: block;
+            }
+            .glass-nav {
+                padding: 15px 25px;
+            }
+            header {
+                padding: 60px 15px;
+            }
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; margin-bottom: 40px;}
+            .section {
+                padding: 50px 15px;
+                margin: 30px auto;
+                border-radius: 15px;
+            }
+            .card {
+                width: 90%; /* Responsive width */
+                max-width: 350px;
+            }
+            .whatsapp {
+                bottom: 25px;
+                right: 25px;
+                padding: 15px 25px;
+                font-size: 1.1rem;
+            }
+            #scrollToTopBtn {
+                bottom: 25px;
+                left: 25px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.6rem;
+            }
+            #darkModeToggle {
+                top: 20px;
+                right: 20px;
+                padding: 10px 15px;
+                font-size: 0.95rem;
+            }
+            .contact-content {
+                flex-direction: column;
+            }
+            .contact-info, .contact-form {
+                min-width: unset;
+                width: 100%;
+            }
+            .gallery-controls button {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+                margin: 0 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader" id="loader">
+        Adwik Creators <br>
+        <i class="fas fa-palette" style="margin-top: 10px;"></i>
+    </div>
+
+    <button id="darkModeToggle">🌙 Dark Mode</button>
+
+    <button id="scrollToTopBtn" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <header>
+        <div id="particles-js"></div>
+        <div class="content">
+            <h1>Adwik Creators</h1>
+            <p>Crafting Digital Excellence for Your Brand's Growth</p>
+        </div>
+    </header>
+
+    <nav class="glass-nav">
+        <a href="#home" class="nav-brand">Adwik Creators</a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="about" class="section about" data-animate>
+            <h2><i class="fas fa-info-circle"></i> About Us</h2>
+            <p>Adwik Creators is a dynamic team of creative minds dedicated to transforming your vision into captivating digital experiences. We specialize in comprehensive content creation, strategic branding, and impactful digital marketing solutions. Our mission is to empower businesses and creators to connect with their audience, build strong brands, and achieve remarkable growth in the digital landscape.</p>
+        </section>
+
+        <section id="services" class="section section-light services" data-animate>
+            <h2><i class="fas fa-tools"></i> Our Services</h2>
+            <div class="services-grid">
+                <div class="service-item" data-tilt>
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Logo Design</h3>
+                    <p>Crafting unique and memorable logos that truly define your brand identity and leave a lasting impression.</p>
+                </div>
+                <div class="service-item" data-tilt>
+                    <i class="fas fa-image"></i>
+                    <h3>Social Media Design</h3>
+                    <p>Eye-catching social media posts and banners designed to boost engagement and brand visibility across platforms.</p>
+                </div>
+                <div class="service-item" data-tilt>
+                    <i class="fab fa-youtube"></i>
+                    <h3>YouTube Thumbnails</h3>
+                    <p>Creating compelling YouTube thumbnails that grab attention and significantly increase your click-through rates.</p>
+                </div>
+                <div class="service-item" data-tilt>
+                    <i class="fas fa-video"></i>
+                    <h3>Video Editing</h3>
+                    <p>Professional video editing services to transform raw footage into polished, engaging, and high-quality content.</p>
+                </div>
+                <div class="service-item" data-tilt>
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Brand Strategy</h3>
+                    <p>Developing robust brand strategies that articulate your unique selling proposition and resonate with your target audience.</p>
+                </div>
+                <div class="service-item" data-tilt>
+                    <i class="fas fa-users"></i>
+                    <h3>Influencer Marketing</h3>
+                    <p>Connecting your brand with relevant influencers to amplify your message and reach new audiences effectively.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="section pricing" data-animate>
+            <h2><i class="fas fa-tags"></i> Pricing Plans</h2>
+            <div class="pricing-cards">
+                <div class="card" data-tilt>
+                    <h3>Bronze</h3>
+                    <h4>₹3500<small>/month</small></h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> 1 Social Account</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> 2-3 Posts/Week</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Page Setup Included</li>
+                        <li><i class="fas fa-times-circle" style="color: #e74c3c;"></i> No Paid Ads</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Content Writing</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Monthly Performance Report</li>
+                        <li><i class="fas fa-times-circle" style="color: #e74c3c;"></i> Limited Customization</li>
+                    </ul>
+                    <a href="https://wa.me/919000000000" target="_blank">Get Started</a>
+                </div>
+                <div class="card" data-tilt>
+                    <h3>Silver</h3>
+                    <h4>₹5500<small>/month</small></h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> 3 Social Accounts</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> 3-4 Posts/Week</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Page Setup Included</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> FB + Instagram Ads</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Advanced Content Writing</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Monthly In-depth Report</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> 5 Customization Revisions</li>
+                    </ul>
+                    <a href="https://wa.me/919000000000" target="_blank">Get Started</a>
+                </div>
+                <div class="card" data-tilt>
+                    <h3>Gold</h3>
+                    <h4>₹8500<small>/month</small></h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> 5 Social Accounts</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> 5-6 Posts/Week + 2 Reels</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Page Setup Included</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> FB + Insta + Google Ads</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Premium Content Strategy</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Weekly Performance Report</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Full Customization & Support</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Dedicated Strategy Plan</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Priority Support</li>
+                    </ul>
+                    <a href="https://wa.me/919000000000" target="_blank">Get Started</a>
+                </div>
+            </div>
+            <p class="pricing-terms"><strong>Terms:</strong> ₹500 advance to start project. Balance after 3 days. Custom reels beyond plan inclusions are extra.</p>
+        </section>
+
+        <section class="section section-light clients" data-animate>
+            <h2><i class="fas fa-handshake"></i> Our Esteemed Clients</h2>
+            <div class="clients-grid">
+                <img src="https://via.placeholder.com/180x80/2C2C2C/E0E0E0?text=Brand+A" alt="Client Brand A Logo">
+                <img src="https://via.placeholder.com/180x80/2C2C2C/E0E0E0?text=Brand+B" alt="Client Brand B Logo">
+                <img src="https://via.placeholder.com/180x80/2C2C2C/E0E0E0?text=Brand+C" alt="Client Brand C Logo">
+                <img src="https://via.placeholder.com/180x80/2C2C2C/E0E0E0?text=Brand+D" alt="Client Brand D Logo">
+                <img src="https://via.placeholder.com/180x80/2C2C2C/E0E0E0?text=Brand+E" alt="Client Brand E Logo">
+                <img src="https://via.placeholder.com/180x80/2C2C2C/E0E0E0?text=Brand+F" alt="Client Brand F Logo">
+            </div>
+        </section>
+
+        <section id="portfolio" class="section gallery" data-animate>
+            <h2><i class="fas fa-briefcase"></i> Our Portfolio</h2>
+            <p style="text-align: center; margin-bottom: 30px;">A glimpse into our recent creative ventures.</p>
+
+            <div class="gallery-controls">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="logo">Logo Design</button>
+                <button class="filter-btn" data-filter="youtube">YouTube</button>
+                <button class="filter-btn" data-filter="social">Social Media</button>
+                <button class="filter-btn" data-filter="video">Video Editing</button>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="logo">
+                    <img data-src="https://via.placeholder.com/450x250/FF6B00/FFFFFF?text=Awesome+Logo" alt="Portfolio Image 1 - Logo Design">
+                    <div class="gallery-overlay">Logo Design Project</div>
+                </div>
+                <div class="gallery-item" data-category="youtube">
+                    <img data-src="https://via.placeholder.com/450x250/FF6B00/FFFFFF?text=YouTube+Magic" alt="Portfolio Image 2 - YouTube Thumbnail">
+                    <div class="gallery-overlay">YouTube Thumbnail</div>
+                </div>
+                <div class="gallery-item" data-category="social">
+                    <img data-src="https://via.placeholder.com/450x250/FF6B00/FFFFFF?text=Social+Campaign" alt="Portfolio Image 3 - Social Media Post">
+                    <div class="gallery-overlay">Social Media Post</div>
+                </div>
+                <div class="gallery-item" data-category="video">
+                    <img data-src="https://via.placeholder.com/450x250/FF6B00/FFFFFF?text=Video+Promo" alt="Portfolio Image 4 - Video Editing">
+                    <div class="gallery-overlay">Video Editing Sample</div>
+                </div>
+                <div class="gallery-item" data-category="logo">
+                    <img data-src="https://via.placeholder.com/450x250/FF6B00/FFFFFF?text=Brand+Identity" alt="Portfolio Image 5 - Branding">
+                    <div class="gallery-overlay">Brand Identity</div>
+                </div>
+                <div class="gallery-item" data-category="social">
+                    <img data-src="https://via.placeholder.com/450x250/FF6B00/FFFFFF?text=Infographic" alt="Portfolio Image 6 - Infographic">
+                    <div class="gallery-overlay">Infographic Design</div>
+                </div>
+                <div class="gallery-item" data-category="youtube">
+                    <img data-src="https://via.placeholder.com/450x250/FF6B00/FFFFFF?text=Channel+Art" alt="Portfolio Image 7 - Channel Art">
+                    <div class="gallery-overlay">YouTube Channel Art</div>
+                </div>
+                <div class="gallery-item" data-category="video">
+                    <img data-src="https://via.placeholder.com/450x250/FF6B00/FFFFFF?text=Short+Reel" alt="Portfolio Image 8 - Short Reel">
+                    <div class="gallery-overlay">Short Video Reel</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="section section-light testimonials" data-animate>
+            <h2><i class="fas fa-quote-right"></i> Client Testimonials</h2>
+            <div class="swiper-container testimonial-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <p>"Adwik Creators ne mere YouTube channel ka look hi badal diya! Unki thumbnails aur video editing kamaal ki hai. Highly recommend for any content creator looking to stand out."</p>
+                            <span>– Rahul Verma, YouTube Creator</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <p>"The best service for branding & social media marketing. Adwik Creators truly understands client needs and delivers outstanding results. Definitely value for money!"</p>
+                            <span>– Priya Sharma, Small Business Owner</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <p>"Our brand visibility increased significantly after partnering with Adwik Creators. Their strategic approach to social media is top-notch. Very professional and efficient."</p>
+                            <span>– Aman Gupta, Startup Founder</span>
+                        </div>
+                    </div>
+                     <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <p>"Adwik Creators' branding expertise helped us define our unique voice. Their team is insightful and incredibly responsive."</p>
+                            <span>– Sneha Rao, Marketing Manager</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <p>"From logo to social media, Adwik Creators delivered beyond expectations. They truly care about client success."</p>
+                            <span>– Vikas Singh, E-commerce Entrepreneur</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+
+        <section class="section blog" data-animate>
+            <h2><i class="fas fa-pencil-alt"></i> Latest Insights from Our Blog</h2>
+            <div class="blog-posts">
+                <div class="blog-post-item">
+                    <a href="#">
+                        <h3>5 Social Media Trends in 2025 You Can’t Miss</h3>
+                    </a>
+                    <div class="content-wrapper">
+                        <p>Stay ahead of the curve with our expert analysis of the hottest social media trends shaping the digital landscape this year. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                    <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
+                </div>
+                <div class="blog-post-item">
+                    <a href="#">
+                        <h3>How to Design a Viral Thumbnail: A Step-by-Step Guide</h3>
+                    </a>
+                    <div class="content-wrapper">
+                        <p>Unlock the secrets to creating click-worthy YouTube thumbnails that drive massive views and engagement for your videos. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                    <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
+                </div>
+                <div class="blog-post-item">
+                    <a href="#">
+                        <h3>Branding Basics Every New Business Should Know</h3>
+                    </a>
+                    <div class="content-wrapper">
+                        <p>Learn the fundamental principles of building a strong brand identity that resonates with your audience from day one. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                    <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section section-light faq" data-animate>
+            <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+            <details>
+                <summary>Work start karne ke liye kya dena hoga?</summary>
+                <p>Kaam shuru karne ke liye ₹500 ka advance amount dena hoga. Yeh advance aapki project commitment ko secure karta hai, aur baaki amount delivery ke baad settle kiya jaata hai.</p>
+            </details>
+            <details>
+                <summary>Delivery timeline kya hoga?</summary>
+                <p>Har service ka timeline uski complexity par nirbhar karta hai. Project shuru karne se pehle, hum aapke saath ek detailed timeline discuss karenge, taki aapko clear idea ho ki aapka kaam kab tak poora hoga.</p>
+            </details>
+            <details>
+                <summary>Custom reels chargeable hai kya?</summary>
+                <p>Haan, agar aapke choose kiye hue plan mein custom reels shamil nahi hain, toh unke liye additional charges lagenge. Hum aapko options provide karenge.</p>
+            </details>
+            <details>
+                <summary>Kya aap meri specific business niche ke liye kaam karte hain?</summary>
+                <p>Bilkul! Hum various industries ke clients ke saath kaam karte hain. Hum aapki business niche aur target audience ko samajhne ke liye research karte hain, taki hum customize kiye hue aur effective solutions de sakein.</p>
+            </details>
+        </section>
+
+        <section id="contact" class="section contact" data-animate>
+            <h2><i class="fas fa-envelope"></i> Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:contact@adwikcreators.com">contact@adwikcreators.com</a></p>
+                    <p><i class="fab fa-instagram"></i> Instagram: <a href="https://instagram.com/adwikcreators" target="_blank">@adwikcreators</a></p>
+                    <p><i class="fab fa-youtube"></i> YouTube: <a href="https://youtube.com/@adwikcreators" target="_blank">@adwikcreators</a></p>
+                    <p><i class="fas fa-phone-alt"></i> Phone: <a href="tel:+919000000000">+91 90000 00000</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Location: Udaipur, Rajasthan, India</p>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required pattern="[A-Za-z\s]{3,}" title="Name must be at least 3 characters and contain only letters and spaces."/>
+                            <span class="validation-icon"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required />
+                            <span class="validation-icon"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" placeholder="Subject" required />
+                            <span class="validation-icon"></span>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="6" placeholder="Your Message" required minlength="10" title="Message must be at least 10 characters."></textarea>
+                            <span class="validation-icon"></span>
+                        </div>
+                        <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <a class="whatsapp" href="https://wa.me/919000000000" target="_blank">
+        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+    </a>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://instagram.com/adwikcreators" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/@adwikcreators" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/919000000000" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p>© 2025 Adwik Creators. All rights reserved. Designed with ❤️ by Adwik Creators Team.</p>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+
+    <script>
+        // Loader functionality
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            loader.classList.add('hidden');
+            // Optional: Remove loader from DOM after transition
+            loader.addEventListener('transitionend', () => loader.remove());
+        });
+
+        // Hamburger Menu Toggle
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('show');
+        }
+
+        // Intersection Observer for Scroll Animations
+        const animateElements = document.querySelectorAll('[data-animate]');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Optional: Stop observing once visible to prevent re-triggering
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 }); // Trigger when 15% of element is visible
+
+        animateElements.forEach(el => observer.observe(el));
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode); // Save preference
+            darkModeToggle.textContent = isDarkMode ? '☀️ Light Mode' : '🌙 Dark Mode';
+            updateDarkModeStyles(isDarkMode);
+        });
+
+        // Function to update dark mode styles
+        function updateDarkModeStyles(isDarkMode) {
+            let darkStyle = document.getElementById('dark-style');
+            if (isDarkMode) {
+                if (!darkStyle) {
+                    darkStyle = document.createElement('style');
+                    darkStyle.id = 'dark-style';
+                    document.head.appendChild(darkStyle);
+                }
+                darkStyle.innerHTML = `
+                    body.dark-mode {
+                        background: linear-gradient(to bottom right, #000000, #0a0a0a) !important; /* Even darker */
+                        color: #f0f0f0 !important; /* Slightly lighter text */
+                        --text-color: #f0f0f0; /* Update variable for general text */
+                    }
+                    body.dark-mode .section {
+                        background: #121212 !important; /* Darker section background */
+                        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.67);
+                    }
+                    body.dark-mode .section-light {
+                        background: #0a0a0a !important; /* Even darker for variety */
+                    }
+                    body.dark-mode header, body.dark-mode footer {
+                        background-color: rgba(0,0,0,0.95) !important; /* Almost opaque */
+                    }
+                    body.dark-mode .glass-nav, body.dark-mode .card,
+                    body.dark-mode .service-item, body.dark-mode .testimonial-card,
+                    body.dark-mode .faq details, body.dark-mode .blog-post-item,
+                    body.dark-mode form {
+                        background: rgba(0,0,0,0.4) !important; /* Slightly more opaque glass */
+                        border: 1px solid rgba(255,255,255,0.08) !important; /* Stronger border */
+                    }
+                    body.dark-mode .card:hover, body.dark-mode .service-item:hover {
+                        box-shadow: 0 0 25px rgba(255, 107, 0, 0.5) !important; /* Stronger glow on hover */
+                    }
+                    body.dark-mode form input, body.dark-mode form textarea {
+                        background-color: rgba(0,0,0,0.3) !important;
+                        border-color: rgba(255,255,255,0.15) !important;
+                        color: #f0f0f0 !important;
+                    }
+                    body.dark-mode .clients-grid img {
+                        filter: brightness(0.6) grayscale(100%) !important; /* Even darker grayscale */
+                    }
+                    body.dark-mode .clients-grid img:hover {
+                        filter: brightness(1) grayscale(0%) !important;
+                    }
+                    body.dark-mode .nav-links a:hover {
+                        color: #fff !important;
+                    }
+                    body.dark-mode .testimonial-swiper .swiper-pagination-bullet {
+                        background: rgba(255, 255, 255, 0.7);
+                    }
+                    body.dark-mode .blog-post-item .content-wrapper::after {
+                        background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+                    }
+                `;
+            } else {
+                if (darkStyle) {
+                    darkStyle.remove();
+                }
+            }
+        }
+
+        // Apply dark mode preference on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedDarkMode = localStorage.getItem('darkMode');
+            if (savedDarkMode === 'true') {
+                document.body.classList.add('dark-mode');
+                darkModeToggle.textContent = '☀️ Light Mode';
+                updateDarkModeStyles(true);
+            } else {
+                darkModeToggle.textContent = '🌙 Dark Mode';
+                updateDarkModeStyles(false);
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu after clicking a link
+                if (document.getElementById('navLinks').classList.contains('show')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Particles.js configuration
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#FFB347" // Primary-light color
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#FFB347",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+
+        // Initialize Swiper for Testimonials
+        document.addEventListener('DOMContentLoaded', () => {
+            new Swiper('.testimonial-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                    },
+                }
+            });
+        });
+
+        // Initialize Vanilla-Tilt.js for cards and service items
+        VanillaTilt.init(document.querySelectorAll(".card, .service-item"), {
+            max: 10,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.2,
+        });
+
+        // Scroll to Top Button functionality
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        };
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Lazy Loading Images
+        document.addEventListener('DOMContentLoaded', () => {
+            const lazyImages = document.querySelectorAll('img[data-src]');
+            const lazyLoadObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                        img.classList.add('loaded'); // Add class for loaded state styling
+                        observer.unobserve(img);
+                    }
+                });
+            }, {
+                rootMargin: '0px 0px 100px 0px', // Load images 100px before they enter viewport
+                threshold: 0 // As soon as any part is visible
+            });
+
+            lazyImages.forEach(img => lazyLoadObserver.observe(img));
+        });
+
+
+        // Portfolio Filtering
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const filter = button.dataset.filter;
+
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+
+                    galleryItems.forEach(item => {
+                        const category = item.dataset.category;
+                        if (filter === 'all' || category === filter) {
+                            item.classList.remove('hidden');
+                        } else {
+                            item.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        });
+
+        // "Read More" functionality for Blog Posts
+        document.addEventListener('DOMContentLoaded', () => {
+            const readMoreButtons = document.querySelectorAll('.read-more-btn');
+
+            readMoreButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const contentWrapper = button.previousElementSibling; // The div with class 'content-wrapper'
+                    const icon = button.querySelector('i');
+
+                    contentWrapper.classList.toggle('expanded');
+
+                    if (contentWrapper.classList.contains('expanded')) {
+                        button.innerHTML = 'Read Less <i class="fas fa-chevron-up"></i>';
+                    } else {
+                        button.innerHTML = 'Read More <i class="fas fa-chevron-down"></i>';
+                    }
+                });
+            });
+        });
+
+        // Enhanced Form Validation Feedback
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contactForm');
+            const formInputs = form.querySelectorAll('input[required], textarea[required]');
+
+            formInputs.forEach(input => {
+                const formGroup = input.closest('.form-group');
+                const iconSpan = formGroup.querySelector('.validation-icon');
+
+                input.addEventListener('input', () => {
+                    if (input.checkValidity()) {
+                        input.classList.remove('invalid');
+                        input.classList.add('valid');
+                        iconSpan.innerHTML = '<i class="fas fa-check-circle"></i>';
+                        iconSpan.style.display = 'block';
+                    } else {
+                        input.classList.remove('valid');
+                        input.classList.add('invalid');
+                        iconSpan.innerHTML = '<i class="fas fa-exclamation-circle"></i>';
+                        iconSpan.style.display = 'block';
+                    }
+                    // Hide icon if input is empty
+                    if (input.value.trim() === '') {
+                        input.classList.remove('valid', 'invalid');
+                        iconSpan.style.display = 'none';
+                    }
+                });
+
+                // Initial check for pre-filled (though unlikely for a contact form) or for required field styling
+                input.addEventListener('blur', () => {
+                     if (input.value.trim() !== '') {
+                        if (input.checkValidity()) {
+                            input.classList.remove('invalid');
+                            input.classList.add('valid');
+                            iconSpan.innerHTML = '<i class="fas fa-check-circle"></i>';
+                            iconSpan.style.display = 'block';
+                        } else {
+                            input.classList.remove('valid');
+                            input.classList.add('invalid');
+                            iconSpan.innerHTML = '<i class="fas fa-exclamation-circle"></i>';
+                            iconSpan.style.display = 'block';
+                        }
+                    } else {
+                        input.classList.remove('valid', 'invalid');
+                        iconSpan.style.display = 'none';
+                    }
+                });
+            });
+
+            form.addEventListener('submit', (event) => {
+                event.preventDefault(); // Prevent actual form submission for this example
+
+                let allValid = true;
+                formInputs.forEach(input => {
+                    if (!input.checkValidity()) {
+                        allValid = false;
+                        input.classList.remove('valid');
+                        input.classList.add('invalid');
+                        const formGroup = input.closest('.form-group');
+                        const iconSpan = formGroup.querySelector('.validation-icon');
+                        iconSpan.innerHTML = '<i class="fas fa-exclamation-circle"></i>';
+                        iconSpan.style.display = 'block';
+                    } else {
+                         input.classList.remove('invalid');
+                         input.classList.add('valid');
+                         const formGroup = input.closest('.form-group');
+                         const iconSpan = formGroup.querySelector('.validation-icon');
+                         iconSpan.innerHTML = '<i class="fas fa-check-circle"></i>';
+                         iconSpan.style.display = 'block';
+                    }
+                });
+
+                if (allValid) {
+                    alert('Form submitted successfully! (This is a demo. No actual submission occurred.)');
+                    form.reset(); // Clear form on successful submission
+                    // Remove validation styles and icons after successful submission
+                    formInputs.forEach(input => {
+                        input.classList.remove('valid', 'invalid');
+                        input.closest('.form-group').querySelector('.validation-icon').style.display = 'none';
+                    });
+                } else {
+                    alert('Please fill out all required fields correctly.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
