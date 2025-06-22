@@ -370,6 +370,70 @@
             transform: scale(1.1); /* More pronounced scale */
         }
 
+        /* Our Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust min-width as needed */
+            gap: 30px;
+            margin-top: 40px;
+            justify-content: center;
+        }
+
+        .team-member-card {
+            background-color: var(--glass-bg);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            backdrop-filter: blur(8px);
+        }
+
+        .team-member-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(255, 107, 0, 0.5); /* Primary color glow */
+        }
+
+        .team-member-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary-light);
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(255, 107, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .team-member-card h3 {
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-size: 1.8rem;
+        }
+
+        .team-member-card p {
+            color: var(--accent);
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .team-member-card .social-links a {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .team-member-card .social-links a:hover {
+            color: var(--primary);
+            transform: translateY(-3px) scale(1.1);
+        }
+
         /* Portfolio Gallery */
         .gallery-controls {
             text-align: center;
@@ -857,7 +921,7 @@
             h1 { font-size: 3rem; }
             h2 { font-size: 2.2rem; }
             .section { padding: 80px 15px; margin: 40px auto; }
-            .pricing-cards, .gallery-grid, .clients-grid, .services-grid {
+            .pricing-cards, .gallery-grid, .clients-grid, .services-grid, .team-grid {
                 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
                 gap: 25px;
             }
@@ -950,7 +1014,6 @@
     </div>
 
     <button id="darkModeToggle">🌙 Dark Mode</button>
-
     <button id="scrollToTopBtn" title="Go to top">
         <i class="fas fa-arrow-up"></i>
     </button>
@@ -972,7 +1035,7 @@
             <a href="#about">About</a>
             <a href="#services">Services</a>
             <a href="#pricing">Pricing</a>
-            <a href="#portfolio">Portfolio</a>
+            <a href="#team">Our Team</a> <a href="#portfolio">Portfolio</a>
             <a href="#testimonials">Testimonials</a>
             <a href="#contact">Contact</a>
         </div>
@@ -1083,10 +1146,55 @@
             </div>
         </section>
 
+        <section id="team" class="section team" data-animate>
+            <h2><i class="fas fa-users-gear"></i> Our Creative Team</h2>
+            <p style="text-align: center; margin-bottom: 40px; font-size: 1.15rem;">Meet the passionate individuals driving innovation at Adwik Creators.</p>
+            <div class="team-grid">
+                <div class="team-member-card" data-tilt>
+                    <img src="https://via.placeholder.com/200/FF6B00/FFFFFF?text=Team+Member+1" alt="Team Member 1">
+                    <h3>John Doe</h3>
+                    <p>Founder & CEO</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="team-member-card" data-tilt>
+                    <img src="https://via.placeholder.com/200/FF6B00/FFFFFF?text=Team+Member+2" alt="Team Member 2">
+                    <h3>Jane Smith</h3>
+                    <p>Lead Designer</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                    </div>
+                </div>
+                <div class="team-member-card" data-tilt>
+                    <img src="https://via.placeholder.com/200/FF6B00/FFFFFF?text=Team+Member+3" alt="Team Member 3">
+                    <h3>Alex Johnson</h3>
+                    <p>Marketing Strategist</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="team-member-card" data-tilt>
+                    <img src="https://via.placeholder.com/200/FF6B00/FFFFFF?text=Team+Member+4" alt="Team Member 4">
+                    <h3>Maria Garcia</h3>
+                    <p>Video Editor</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-vimeo-v"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section id="portfolio" class="section gallery" data-animate>
             <h2><i class="fas fa-briefcase"></i> Our Portfolio</h2>
             <p style="text-align: center; margin-bottom: 30px;">A glimpse into our recent creative ventures.</p>
-
             <div class="gallery-controls">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="logo">Logo Design</button>
@@ -1094,7 +1202,6 @@
                 <button class="filter-btn" data-filter="social">Social Media</button>
                 <button class="filter-btn" data-filter="video">Video Editing</button>
             </div>
-
             <div class="gallery-grid">
                 <div class="gallery-item" data-category="logo">
                     <img data-src="https://via.placeholder.com/450x250/FF6B00/FFFFFF?text=Awesome+Logo" alt="Portfolio Image 1 - Logo Design">
@@ -1116,53 +1223,51 @@
                     <img data-src="https://via.placeholder.com/450x250/FF6B00/FFFFFF?text=Brand+Identity" alt="Portfolio Image 5 - Branding">
                     <div class="gallery-overlay">Brand Identity</div>
                 </div>
-                <div class="gallery-item" data-category="social">
-                    <img data-src="https://via.placeholder.com/450x250/FF6B00/FFFFFF?text=Infographic" alt="Portfolio Image 6 - Infographic">
-                    <div class="gallery-overlay">Infographic Design</div>
-                </div>
                 <div class="gallery-item" data-category="youtube">
-                    <img data-src="https://via.placeholder.com/450x250/FF6B00/FFFFFF?text=Channel+Art" alt="Portfolio Image 7 - Channel Art">
-                    <div class="gallery-overlay">YouTube Channel Art</div>
+                    <img data-src="https://via.placeholder.com/450x250/FF6B00/FFFFFF?text=Gaming+Channel" alt="Portfolio Image 6 - Gaming Thumbnail">
+                    <div class="gallery-overlay">Gaming Channel Thumbnail</div>
+                </div>
+                <div class="gallery-item" data-category="social">
+                    <img data-src="https://via.placeholder.com/450x250/FF6B00/FFFFFF?text=Insta+Story" alt="Portfolio Image 7 - Instagram Story">
+                    <div class="gallery-overlay">Instagram Story Design</div>
                 </div>
                 <div class="gallery-item" data-category="video">
-                    <img data-src="https://via.placeholder.com/450x250/FF6B00/FFFFFF?text=Short+Reel" alt="Portfolio Image 8 - Short Reel">
-                    <div class="gallery-overlay">Short Video Reel</div>
+                    <img data-src="https://via.placeholder.com/450x250/FF6B00/FFFFFF?text=Explainer+Video" alt="Portfolio Image 8 - Explainer Video">
+                    <div class="gallery-overlay">Explainer Video</div>
+                </div>
+                <div class="gallery-item" data-category="logo">
+                    <img data-src="https://via.placeholder.com/450x250/FF6B00/FFFFFF?text=Minimal+Logo" alt="Portfolio Image 9 - Minimal Logo">
+                    <div class="gallery-overlay">Minimalist Logo</div>
                 </div>
             </div>
         </section>
 
         <section id="testimonials" class="section section-light testimonials" data-animate>
-            <h2><i class="fas fa-quote-right"></i> Client Testimonials</h2>
-            <div class="swiper-container testimonial-swiper">
+            <h2><i class="fas fa-comments"></i> What Our Clients Say</h2>
+            <div class="swiper testimonial-swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="testimonial-card">
-                            <p>"Adwik Creators ne mere YouTube channel ka look hi badal diya! Unki thumbnails aur video editing kamaal ki hai. Highly recommend for any content creator looking to stand out."</p>
-                            <span>– Rahul Verma, YouTube Creator</span>
+                            <p>"Adwik Creators transformed our social media presence! Their designs are vibrant and engaging. Highly recommend!"</p>
+                            <span>- Priya Sharma, Boutique Owner</span>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="testimonial-card">
-                            <p>"The best service for branding & social media marketing. Adwik Creators truly understands client needs and delivers outstanding results. Definitely value for money!"</p>
-                            <span>– Priya Sharma, Small Business Owner</span>
+                            <p>"The team at Adwik did an outstanding job with our brand logo and strategy. Professional, creative, and timely delivery."</p>
+                            <span>- Raj Patel, Startup Founder</span>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="testimonial-card">
-                            <p>"Our brand visibility increased significantly after partnering with Adwik Creators. Their strategic approach to social media is top-notch. Very professional and efficient."</p>
-                            <span>– Aman Gupta, Startup Founder</span>
-                        </div>
-                    </div>
-                     <div class="swiper-slide">
-                        <div class="testimonial-card">
-                            <p>"Adwik Creators' branding expertise helped us define our unique voice. Their team is insightful and incredibly responsive."</p>
-                            <span>– Sneha Rao, Marketing Manager</span>
+                            <p>"Our YouTube channel's click-through rates have soared thanks to their amazing thumbnail designs. Truly exceptional work!"</p>
+                            <span>- Sneha Singh, Content Creator</span>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="testimonial-card">
-                            <p>"From logo to social media, Adwik Creators delivered beyond expectations. They truly care about client success."</p>
-                            <span>– Vikas Singh, E-commerce Entrepreneur</span>
+                            <p>"Their video editing skills are top-notch. They brought our raw footage to life with incredible flair and precision."</p>
+                            <span>- Vikrant Rao, Production House</span>
                         </div>
                     </div>
                 </div>
@@ -1172,35 +1277,30 @@
             </div>
         </section>
 
-        <section class="section blog" data-animate>
-            <h2><i class="fas fa-pencil-alt"></i> Latest Insights from Our Blog</h2>
+        <section id="blog" class="section blog" data-animate>
+            <h2><i class="fas fa-newspaper"></i> Our Latest Articles</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Stay updated with our insights on digital marketing and creative trends.</p>
             <div class="blog-posts">
                 <div class="blog-post-item">
-                    <a href="#">
-                        <h3>5 Social Media Trends in 2025 You Can’t Miss</h3>
-                    </a>
+                    <a href="#">The Power of Visual Branding in 2025</a>
                     <div class="content-wrapper">
-                        <p>Stay ahead of the curve with our expert analysis of the hottest social media trends shaping the digital landscape this year. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>In today's fast-paced digital world, visual branding is more critical than ever. It's not just about a logo; it's about the consistent visual language that speaks volumes about your brand's personality and values. A strong visual identity ensures instant recognition and fosters trust with your audience...</p>
                     </div>
-                    <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
+                    <button class="read-more-btn">Read More</button>
                 </div>
                 <div class="blog-post-item">
-                    <a href="#">
-                        <h3>How to Design a Viral Thumbnail: A Step-by-Step Guide</h3>
-                    </a>
+                    <a href="#">Mastering Social Media Engagement Strategies</a>
                     <div class="content-wrapper">
-                        <p>Unlock the secrets to creating click-worthy YouTube thumbnails that drive massive views and engagement for your videos. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>Engagement is the holy grail of social media marketing. It's not enough to just post content; you need to create conversations, build communities, and foster genuine interactions. We delve into actionable strategies that can significantly boost your engagement rates across all major platforms...</p>
                     </div>
-                    <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
+                    <button class="read-more-btn">Read More</button>
                 </div>
                 <div class="blog-post-item">
-                    <a href="#">
-                        <h3>Branding Basics Every New Business Should Know</h3>
-                    </a>
+                    <a href="#">Video Marketing: Why It's Indispensable Now</a>
                     <div class="content-wrapper">
-                        <p>Learn the fundamental principles of building a strong brand identity that resonates with your audience from day one. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>Video content dominates the digital landscape, with consumption rates steadily climbing year over year. From short-form reels to long-form documentaries, video offers unparalleled storytelling capabilities. Discover how incorporating video marketing can elevate your brand's message and reach...</p>
                     </div>
-                    <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
+                    <button class="read-more-btn">Read More</button>
                 </div>
             </div>
         </section>
@@ -1208,206 +1308,209 @@
         <section id="faq" class="section section-light faq" data-animate>
             <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
             <details>
-                <summary>Work start karne ke liye kya dena hoga?</summary>
-                <p>Kaam shuru karne ke liye ₹500 ka advance amount dena hoga. Yeh advance aapki project commitment ko secure karta hai, aur baaki amount delivery ke baad settle kiya jaata hai.</p>
+                <summary>What services does Adwik Creators offer?</summary>
+                <p>Adwik Creators specializes in digital content creation, branding, and marketing services. This includes logo design, social media design, YouTube thumbnails, video editing, brand strategy, and influencer marketing.</p>
             </details>
             <details>
-                <summary>Delivery timeline kya hoga?</summary>
-                <p>Har service ka timeline uski complexity par nirbhar karta hai. Project shuru karne se pehle, hum aapke saath ek detailed timeline discuss karenge, taki aapko clear idea ho ki aapka kaam kab tak poora hoga.</p>
+                <summary>How can I get a quote for a custom project?</summary>
+                <p>For custom projects, please reach out to us via the contact form on our website, or directly through WhatsApp. Provide details about your requirements, and we'll get back to you with a personalized quote.</p>
             </details>
             <details>
-                <summary>Custom reels chargeable hai kya?</summary>
-                <p>Haan, agar aapke choose kiye hue plan mein custom reels shamil nahi hain, toh unke liye additional charges lagenge. Hum aapko options provide karenge.</p>
+                <summary>What is your typical turnaround time for projects?</summary>
+                <p>Turnaround times vary depending on the complexity and scope of the project. We always discuss and agree upon realistic timelines with our clients upfront. For standard services, we aim for efficient and timely delivery.</p>
             </details>
             <details>
-                <summary>Kya aap meri specific business niche ke liye kaam karte hain?</summary>
-                <p>Bilkul! Hum various industries ke clients ke saath kaam karte hain. Hum aapki business niche aur target audience ko samajhne ke liye research karte hain, taki hum customize kiye hue aur effective solutions de sakein.</p>
+                <summary>Do you offer ongoing support after project completion?</summary>
+                <p>Yes, we offer various levels of ongoing support depending on the service. For marketing plans, support is continuous. For design projects, minor revisions post-delivery are typically included.</p>
             </details>
         </section>
 
         <section id="contact" class="section contact" data-animate>
-            <h2><i class="fas fa-envelope"></i> Get In Touch</h2>
+            <h2><i class="fas fa-headset"></i> Get In Touch</h2>
+            <p style="text-align: center; margin-bottom: 40px; font-size: 1.15rem;">Have a project in mind? Let's discuss how we can bring your ideas to life.</p>
             <div class="contact-content">
                 <div class="contact-info">
                     <h3>Contact Information</h3>
-                    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:contact@adwikcreators.com">contact@adwikcreators.com</a></p>
-                    <p><i class="fab fa-instagram"></i> Instagram: <a href="https://instagram.com/adwikcreators" target="_blank">@adwikcreators</a></p>
-                    <p><i class="fab fa-youtube"></i> YouTube: <a href="https://youtube.com/@adwikcreators" target="_blank">@adwikcreators</a></p>
-                    <p><i class="fas fa-phone-alt"></i> Phone: <a href="tel:+919000000000">+91 90000 00000</a></p>
-                    <p><i class="fas fa-map-marker-alt"></i> Location: Udaipur, Rajasthan, India</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Jaipur, Rajasthan, India</p>
+                    <p><i class="fas fa-phone-alt"></i> <a href="tel:+919000000000">+91 90000 00000</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@adwikcreators.com">info@adwikcreators.com</a></p>
+                    <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/919000000000" target="_blank">Chat on WhatsApp</a></p>
                 </div>
                 <div class="contact-form">
                     <h3>Send Us a Message</h3>
                     <form id="contactForm">
                         <div class="form-group">
-                            <input type="text" id="name" placeholder="Your Name" required pattern="[A-Za-z\s]{3,}" title="Name must be at least 3 characters and contain only letters and spaces."/>
+                            <input type="text" id="name" placeholder="Your Name" required>
                             <span class="validation-icon"></span>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" placeholder="Your Email" required />
+                            <input type="email" id="email" placeholder="Your Email" required>
                             <span class="validation-icon"></span>
                         </div>
                         <div class="form-group">
-                            <input type="text" id="subject" placeholder="Subject" required />
+                            <input type="text" id="subject" placeholder="Subject" required>
                             <span class="validation-icon"></span>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" rows="6" placeholder="Your Message" required minlength="10" title="Message must be at least 10 characters."></textarea>
+                            <textarea id="message" placeholder="Your Message" rows="6" required></textarea>
                             <span class="validation-icon"></span>
                         </div>
-                        <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
+                        <button type="submit">Send Message</button>
                     </form>
                 </div>
             </div>
         </section>
     </main>
 
-    <a class="whatsapp" href="https://wa.me/919000000000" target="_blank">
-        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+    <a href="https://wa.me/919000000000" class="whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp Us
     </a>
 
     <footer>
         <div class="social-links">
-            <a href="https://instagram.com/adwikcreators" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://youtube.com/@adwikcreators" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="https://wa.me/919000000000" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/adwikcreators" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/adwikcreators" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/adwikcreators" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/adwikcreators" target="_blank"><i class="fab fa-youtube"></i></a>
         </div>
-        <p>© 2025 Adwik Creators. All rights reserved. Designed with ❤️ by Adwik Creators Team.</p>
+        <p>&copy; 2025 Adwik Creators. All rights reserved.</p>
     </footer>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
     <script>
-        // Loader functionality
+        // Loader
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
             loader.classList.add('hidden');
-            // Optional: Remove loader from DOM after transition
-            loader.addEventListener('transitionend', () => loader.remove());
         });
 
-        // Hamburger Menu Toggle
+        // Hamburger Menu
         function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('show');
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('show');
         }
 
-        // Intersection Observer for Scroll Animations
-        const animateElements = document.querySelectorAll('[data-animate]');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    // Optional: Stop observing once visible to prevent re-triggering
-                    observer.unobserve(entry.target);
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('.nav-links a, .nav-brand').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - document.querySelector('.glass-nav').offsetHeight,
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu after clicking
+                    const navLinks = document.getElementById('navLinks');
+                    if (navLinks.classList.contains('show')) {
+                        navLinks.classList.remove('show');
+                    }
                 }
             });
-        }, { threshold: 0.15 }); // Trigger when 15% of element is visible
+        });
 
-        animateElements.forEach(el => observer.observe(el));
+        // Scroll To Top Button
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) { // Show button after scrolling down 300px
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
 
         // Dark Mode Toggle
         const darkModeToggle = document.getElementById('darkModeToggle');
         darkModeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
-            const isDarkMode = document.body.classList.contains('dark-mode');
-            localStorage.setItem('darkMode', isDarkMode); // Save preference
-            darkModeToggle.textContent = isDarkMode ? '☀️ Light Mode' : '🌙 Dark Mode';
-            updateDarkModeStyles(isDarkMode);
+            if (document.body.classList.contains('dark-mode')) {
+                darkModeToggle.innerHTML = '☀️ Light Mode';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                darkModeToggle.innerHTML = '🌙 Dark Mode';
+                localStorage.setItem('theme', 'light');
+            }
         });
 
-        // Function to update dark mode styles
-        function updateDarkModeStyles(isDarkMode) {
-            let darkStyle = document.getElementById('dark-style');
-            if (isDarkMode) {
-                if (!darkStyle) {
-                    darkStyle = document.createElement('style');
-                    darkStyle.id = 'dark-style';
-                    document.head.appendChild(darkStyle);
-                }
-                darkStyle.innerHTML = `
-                    body.dark-mode {
-                        background: linear-gradient(to bottom right, #000000, #0a0a0a) !important; /* Even darker */
-                        color: #f0f0f0 !important; /* Slightly lighter text */
-                        --text-color: #f0f0f0; /* Update variable for general text */
-                    }
-                    body.dark-mode .section {
-                        background: #121212 !important; /* Darker section background */
-                        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.67);
-                    }
-                    body.dark-mode .section-light {
-                        background: #0a0a0a !important; /* Even darker for variety */
-                    }
-                    body.dark-mode header, body.dark-mode footer {
-                        background-color: rgba(0,0,0,0.95) !important; /* Almost opaque */
-                    }
-                    body.dark-mode .glass-nav, body.dark-mode .card,
-                    body.dark-mode .service-item, body.dark-mode .testimonial-card,
-                    body.dark-mode .faq details, body.dark-mode .blog-post-item,
-                    body.dark-mode form {
-                        background: rgba(0,0,0,0.4) !important; /* Slightly more opaque glass */
-                        border: 1px solid rgba(255,255,255,0.08) !important; /* Stronger border */
-                    }
-                    body.dark-mode .card:hover, body.dark-mode .service-item:hover {
-                        box-shadow: 0 0 25px rgba(255, 107, 0, 0.5) !important; /* Stronger glow on hover */
-                    }
-                    body.dark-mode form input, body.dark-mode form textarea {
-                        background-color: rgba(0,0,0,0.3) !important;
-                        border-color: rgba(255,255,255,0.15) !important;
-                        color: #f0f0f0 !important;
-                    }
-                    body.dark-mode .clients-grid img {
-                        filter: brightness(0.6) grayscale(100%) !important; /* Even darker grayscale */
-                    }
-                    body.dark-mode .clients-grid img:hover {
-                        filter: brightness(1) grayscale(0%) !important;
-                    }
-                    body.dark-mode .nav-links a:hover {
-                        color: #fff !important;
-                    }
-                    body.dark-mode .testimonial-swiper .swiper-pagination-bullet {
-                        background: rgba(255, 255, 255, 0.7);
-                    }
-                    body.dark-mode .blog-post-item .content-wrapper::after {
-                        background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
-                    }
-                `;
-            } else {
-                if (darkStyle) {
-                    darkStyle.remove();
-                }
-            }
-        }
-
-        // Apply dark mode preference on load
+        // Apply saved theme
         document.addEventListener('DOMContentLoaded', () => {
-            const savedDarkMode = localStorage.getItem('darkMode');
-            if (savedDarkMode === 'true') {
+            if (localStorage.getItem('theme') === 'dark') {
                 document.body.classList.add('dark-mode');
-                darkModeToggle.textContent = '☀️ Light Mode';
-                updateDarkModeStyles(true);
+                darkModeToggle.innerHTML = '☀️ Light Mode';
             } else {
-                darkModeToggle.textContent = '🌙 Dark Mode';
-                updateDarkModeStyles(false);
+                darkModeToggle.innerHTML = '🌙 Dark Mode';
             }
         });
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                // Close mobile menu after clicking a link
-                if (document.getElementById('navLinks').classList.contains('show')) {
-                    toggleMenu();
+        // Intersection Observer for Animations (Animate on Scroll)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Stop observing once visible
                 }
             });
+        }, observerOptions);
+
+        document.querySelectorAll('[data-animate]').forEach(element => {
+            observer.observe(element);
         });
 
-        // Particles.js configuration
+        // Vanilla Tilt for cards
+        VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+            max: 10,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.5,
+            transition: true,
+            easing: "cubic-bezier(.03,.98,.52,.99)"
+        });
+
+        // Swiper for Testimonials
+        const swiper = new Swiper('.testimonial-swiper', {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 30,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 50,
+                },
+            },
+        });
+
+        // Particles.js for Header Background
         particlesJS('particles-js', {
             "particles": {
                 "number": {
@@ -1418,7 +1521,7 @@
                     }
                 },
                 "color": {
-                    "value": "#FFB347" // Primary-light color
+                    "value": "#ff6b00" /* Primary color */
                 },
                 "shape": {
                     "type": "circle",
@@ -1428,6 +1531,11 @@
                     },
                     "polygon": {
                         "nb_sides": 5
+                    },
+                    "image": {
+                        "src": "img/github.svg",
+                        "width": 100,
+                        "height": 100
                     }
                 },
                 "opacity": {
@@ -1453,7 +1561,7 @@
                 "line_linked": {
                     "enable": true,
                     "distance": 150,
-                    "color": "#FFB347",
+                    "color": "#ffb347", /* Primary light color */
                     "opacity": 0.4,
                     "width": 1
                 },
@@ -1487,7 +1595,7 @@
                 },
                 "modes": {
                     "grab": {
-                        "distance": 140,
+                        "distance": 180,
                         "line_linked": {
                             "opacity": 1
                         }
@@ -1514,187 +1622,94 @@
             "retina_detect": true
         });
 
-        // Initialize Swiper for Testimonials
-        document.addEventListener('DOMContentLoaded', () => {
-            new Swiper('.testimonial-swiper', {
-                slidesPerView: 1,
-                spaceBetween: 30,
-                loop: true,
-                autoplay: {
-                    delay: 5000,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                breakpoints: {
-                    768: {
-                        slidesPerView: 2,
-                    },
-                    1024: {
-                        slidesPerView: 3,
-                    },
-                }
-            });
-        });
-
-        // Initialize Vanilla-Tilt.js for cards and service items
-        VanillaTilt.init(document.querySelectorAll(".card, .service-item"), {
-            max: 10,
-            speed: 400,
-            glare: true,
-            "max-glare": 0.2,
-        });
-
-        // Scroll to Top Button functionality
-        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-
-        window.onscroll = function() {
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                scrollToTopBtn.style.display = "block";
-            } else {
-                scrollToTopBtn.style.display = "none";
-            }
-        };
-
-        scrollToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Lazy Loading Images
-        document.addEventListener('DOMContentLoaded', () => {
-            const lazyImages = document.querySelectorAll('img[data-src]');
-            const lazyLoadObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.removeAttribute('data-src');
-                        img.classList.add('loaded'); // Add class for loaded state styling
-                        observer.unobserve(img);
-                    }
-                });
-            }, {
-                rootMargin: '0px 0px 100px 0px', // Load images 100px before they enter viewport
-                threshold: 0 // As soon as any part is visible
-            });
-
-            lazyImages.forEach(img => lazyLoadObserver.observe(img));
-        });
-
-
-        // Portfolio Filtering
+        // Portfolio Gallery Filtering and Lazy Loading
         document.addEventListener('DOMContentLoaded', () => {
             const filterButtons = document.querySelectorAll('.filter-btn');
             const galleryItems = document.querySelectorAll('.gallery-item');
 
             filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    const filter = button.dataset.filter;
-
                     // Remove active class from all buttons
                     filterButtons.forEach(btn => btn.classList.remove('active'));
-                    // Add active class to clicked button
+                    // Add active class to the clicked button
                     button.classList.add('active');
+
+                    const filter = button.dataset.filter;
 
                     galleryItems.forEach(item => {
                         const category = item.dataset.category;
                         if (filter === 'all' || category === filter) {
                             item.classList.remove('hidden');
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
                         } else {
                             item.classList.add('hidden');
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.95)';
                         }
                     });
                 });
             });
+
+            // Lazy loading for portfolio images
+            const lazyLoadGalleryImages = () => {
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            const src = img.dataset.src;
+                            if (src) {
+                                img.src = src;
+                                img.onload = () => {
+                                    img.classList.add('loaded');
+                                };
+                                img.removeAttribute('data-src');
+                            }
+                            observer.unobserve(img);
+                        }
+                    });
+                }, {
+                    rootMargin: '0px 0px 100px 0px', // Load 100px before reaching viewport
+                    threshold: 0.01 // Trigger when even a small part is visible
+                });
+
+                document.querySelectorAll('.gallery-item img[data-src]').forEach(img => {
+                    observer.observe(img);
+                });
+            };
+
+            lazyLoadGalleryImages();
         });
 
-        // "Read More" functionality for Blog Posts
-        document.addEventListener('DOMContentLoaded', () => {
-            const readMoreButtons = document.querySelectorAll('.read-more-btn');
 
-            readMoreButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const contentWrapper = button.previousElementSibling; // The div with class 'content-wrapper'
-                    const icon = button.querySelector('i');
-
-                    contentWrapper.classList.toggle('expanded');
-
-                    if (contentWrapper.classList.contains('expanded')) {
-                        button.innerHTML = 'Read Less <i class="fas fa-chevron-up"></i>';
-                    } else {
-                        button.innerHTML = 'Read More <i class="fas fa-chevron-down"></i>';
-                    }
-                });
+        // Read More functionality for Blog Posts
+        document.querySelectorAll('.read-more-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const contentWrapper = this.previousElementSibling;
+                contentWrapper.classList.toggle('expanded');
+                if (contentWrapper.classList.contains('expanded')) {
+                    this.textContent = 'Read Less';
+                } else {
+                    this.textContent = 'Read More';
+                }
             });
         });
 
-        // Enhanced Form Validation Feedback
-        document.addEventListener('DOMContentLoaded', () => {
+        // Contact Form Validation
+        document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('contactForm');
             const formInputs = form.querySelectorAll('input[required], textarea[required]');
 
-            formInputs.forEach(input => {
-                const formGroup = input.closest('.form-group');
-                const iconSpan = formGroup.querySelector('.validation-icon');
-
-                input.addEventListener('input', () => {
-                    if (input.checkValidity()) {
-                        input.classList.remove('invalid');
-                        input.classList.add('valid');
-                        iconSpan.innerHTML = '<i class="fas fa-check-circle"></i>';
-                        iconSpan.style.display = 'block';
-                    } else {
-                        input.classList.remove('valid');
-                        input.classList.add('invalid');
-                        iconSpan.innerHTML = '<i class="fas fa-exclamation-circle"></i>';
-                        iconSpan.style.display = 'block';
-                    }
-                    // Hide icon if input is empty
-                    if (input.value.trim() === '') {
-                        input.classList.remove('valid', 'invalid');
-                        iconSpan.style.display = 'none';
-                    }
-                });
-
-                // Initial check for pre-filled (though unlikely for a contact form) or for required field styling
-                input.addEventListener('blur', () => {
-                     if (input.value.trim() !== '') {
-                        if (input.checkValidity()) {
-                            input.classList.remove('invalid');
-                            input.classList.add('valid');
-                            iconSpan.innerHTML = '<i class="fas fa-check-circle"></i>';
-                            iconSpan.style.display = 'block';
-                        } else {
-                            input.classList.remove('valid');
-                            input.classList.add('invalid');
-                            iconSpan.innerHTML = '<i class="fas fa-exclamation-circle"></i>';
-                            iconSpan.style.display = 'block';
-                        }
-                    } else {
-                        input.classList.remove('valid', 'invalid');
-                        iconSpan.style.display = 'none';
-                    }
-                });
-            });
-
-            form.addEventListener('submit', (event) => {
-                event.preventDefault(); // Prevent actual form submission for this example
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
 
                 let allValid = true;
+
                 formInputs.forEach(input => {
                     if (!input.checkValidity()) {
                         allValid = false;
-                        input.classList.remove('valid');
                         input.classList.add('invalid');
+                        input.classList.remove('valid');
                         const formGroup = input.closest('.form-group');
                         const iconSpan = formGroup.querySelector('.validation-icon');
                         iconSpan.innerHTML = '<i class="fas fa-exclamation-circle"></i>';
