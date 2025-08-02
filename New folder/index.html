@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Adwik Creators - Digital Content Creation, Branding & Marketing Services. We Create. You Grow.">
+    <meta name="keywords"
+        content="Adwik Creators, logo design, video editing, social media marketing, branding strategy, content creation, digital marketing, YouTube, Instagram">
+    <meta name="author" content="Adwik Creators">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/833/833472.png" type="image/png">
+    <title>Adwik Creators - Digital Content & Branding Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+</head>
+
+<body>
+
+    <div class="loader" id="loader">
+        Adwik Creators <br>
+        <i class="fas fa-palette" style="margin-top: 10px;"></i>
+    </div>
+
+    <button id="darkModeToggle">🌙 Dark Mode</button>
+    <button id="scrollToTopBtn" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <header>
+        <div id="particles-js"></div>
+        <div class="content">
+            <h1>Adwik Creators</h1>
+            <p>Crafting Digital Excellence for Your Brand's Growth</p>
+        </div>
+    </header>
+
+    <nav class="glass-nav">
+        <a href="#home" class="nav-brand">Adwik Creators</a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#team">Our Team</a> <a href="#portfolio">Portfolio</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="about" class="section about" data-animate>
+            <h2><i class="fas fa-info-circle"></i> About Us</h2>
+            <p>Adwik Creators is a dynamic team of creative minds dedicated to transforming your vision into captivating
+                digital experiences. We specialize in comprehensive content creation, strategic branding, and impactful
+                digital marketing solutions. Our mission is to empower businesses and creators to connect with their
+                audience, build strong brands, and achieve remarkable growth in the digital landscape.</p>
+        </section>
+
+        <section id="services" class="section section-light services" data-animate>
+            <h2><i class="fas fa-tools"></i> Our Services</h2>
+            <div class="services-grid">
+                <div class="service-item" data-tilt>
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Logo Design</h3>
+                    <p>Crafting unique and memorable logos that truly define your brand identity and leave a lasting
+                        impression.</p>
+                </div>
+                <div class="service-item" data-tilt>
+                    <i class="fas fa-image"></i>
+                    <h3>Social Media Design</h3>
+                    <p>Eye-catching social media posts and banners designed to boost engagement and brand visibility
+                        across platforms.</p>
+                </div>
+                <div class="service-item" data-tilt>
+                    <i class="fab fa-youtube"></i>
+                    <h3>YouTube Thumbnails</h3>
+                    <p>Creating compelling YouTube thumbnails that grab attention and significantly increase your
+                        click-through rates.</p>
+                </div>
+                <div class="service-item" data-tilt>
+                    <i class="fas fa-video"></i>
+                    <h3>Video Editing</h3>
+                    <p>Professional video editing services to transform raw footage into polished, engaging, and
+                        high-quality content.</p>
+                </div>
+                <div class="service-item" data-tilt>
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Brand Strategy</h3>
+                    <p>Developing robust brand strategies that articulate your unique selling proposition and resonate
+                        with your target audience.</p>
+                </div>
+                <div class="service-item" data-tilt>
+                    <i class="fas fa-users"></i>
+                    <h3>Influencer Marketing</h3>
+                    <p>Connecting your brand with relevant influencers to amplify your message and reach new audiences
+                        effectively.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="section pricing" data-animate>
+            <h2><i class="fas fa-tags"></i> Pricing Plans</h2>
+            <div class="pricing-cards">
+                <div class="card" data-tilt>
+                    <h3>Bronze</h3>
+                    <h4>₹3500<small>/month</small></h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> 1 Social Account</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> 2-3 Posts/Week</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Page Setup Included</li>
+                        <li><i class="fas fa-times-circle" style="color: #e74c3c;"></i> No Paid Ads</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Content Writing</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Monthly Performance Report</li>
+                        <li><i class="fas fa-times-circle" style="color: #e74c3c;"></i> Limited Customization</li>
+                    </ul>
+                    <a href="https://wa.me/919887420706" target="_blank">Get Started</a>
+                </div>
+                <div class="card" data-tilt>
+                    <h3>Silver</h3>
+                    <h4>₹5500<small>/month</small></h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> 3 Social Accounts</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> 3-4 Posts/Week</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Page Setup Included</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> 3-Paid Ads Support</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Advanced Content Writing</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Monthly Report</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Ad Support: FB + Insta</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> 5 Customization Revisions</li>
+                    </ul>
+                    <a href="https://wa.me/919887420706" target="_blank">Get Started</a>
+                </div>
+                <div class="card" data-tilt>
+                    <h3>Gold</h3>
+                    <h4>₹8500<small>/month</small></h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> 5 Social Accounts</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> 5-6 Posts/Week + 2 Reels</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Page Setup Included</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> 5-Paid Ads Support</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> FB + Insta + Google Ads</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Premium Content Strategy</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Weekly Performance Report</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Full Customization & Support
+                        </li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Dedicated Strategy Plan</li>
+                        <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Priority Support</li>
+                    </ul>
+                    <a href="https://wa.me/919887420706" target="_blank">Get Started</a>
+                </div>
+            </div>
+            <p class="pricing-terms"><strong>Terms:</strong> ₹500 advance to start project. Balance after 3 days. Custom
+                reels beyond plan inclusions are extra.</p>
+        </section>
+
+        <section class="section section-light clients" data-animate>
+            <!-- <h2><i class="fas fa-handshake"></i> Our Esteemed Clients</h2>
+            <div class="clients-grid">
+                <img src="./clientphotos/rainbow3.png" alt="Client Brand A Logo">
+                <img src="./clientphotos/admi 2.jpg" alt="Client Brand B Logo">
+                <img src="./clientphotos/modeling.png" alt="Client Brand C Logo">
+                <img src="./clientphotos/scgool.png" alt="Client Brand D Logo">
+                <img src="./clientphotos/school 1.jpg" alt="Client Brand E Logo">
+                <img src="./clientphotos/photot 2.png" alt="Client Brand F Logo">
+                <img src="./clientphotos/home.png" alt="Client Brand F Logo">
+                <img src="./clientphotos/Artboard 22.jpg" alt="Client Brand F Logo">
+                <img src="./clientphotos/Artboard schl 2.jpg" alt="Client Brand F Logo">
+                <img src="./clientphotos/day school.jpg" alt="Client Brand F Logo">
+            </div> -->
+            <h2><i class="fas fa-handshake"></i> Our Esteemed Clients</h2>
+            <div class="marquee">
+                <ul class="marquee-content">
+                    <img src="./Maples education.jpeg" alt="Client Brand A Logo">
+                    <img src="./G-Earth Final.jpg" alt="Client Brand B Logo">
+                    <img src="./raibow.png" alt="Client Brand C Logo">
+                </ul>
+            </div>
+        </section>
+
+        <section id="team" class="section team" data-animate>
+            <h2><i class="fas fa-users-gear"></i> Our Creative Team</h2>
+            <p style="text-align: center; margin-bottom: 40px; font-size: 1.15rem;">Meet the passionate individuals
+                driving innovation at Adwik Creators.</p>
+            <!-- <div class="team-grid">
+                <div class="team-member-card" data-tilt>
+                    <img src="./naveen2.jpg" alt="Team Member 1">
+                    <h3>Naveen</h3>
+                    <p>Founder & CEO</p>
+                    <p>Leading Adwik Creators with a bold vision.
+                        Expert in strategy, innovation & growth.</p>
+                </div>
+                <div class="team-member-card" data-tilt>
+                    <img src="./nitesh.jpg" alt="Team Member 1">
+                    <h3>Nitesh</h3>
+                    <p>Co-Founder</p>
+                    <p>Empowering Adwik Creators with strategic insight.
+                        Focused on innovation, growth, and collaboration.</p>
+                </div>
+                <div class="team-member-card" data-tilt>
+                    <img src="./anoop.jpg" alt="Team Member 2">
+                    <h3>Anoop</h3>
+                    <p>Figma Designer</p>
+                    <p>Crafts modern, user-friendly UI designs.
+                        Passionate about clean and creative layouts.</p>
+                </div>
+                <div class="team-member-card" data-tilt>
+                    <img src="mayank.jpg" alt="Team Member 2">
+                    <h3>Mayank</h3>
+                    <p>Photoshop Editor</p>
+                    <p>Bringing visuals to life with precision edits.
+                        Skilled in branding and digital artwork.</p>
+                </div>
+                <div class="team-member-card" data-tilt>
+                    <img src="surendra.jpg" alt="Team Member 3">
+                    <h3>Surendra</h3>
+                    <p>Web Developer</p>
+                    <p>Develops fast and responsive web solutions.
+                        Expert in front-end and UI implementation.</p>
+                </div>
+                <div class="team-member-card" data-tilt>
+                    <img src="deepak.jpg" alt="Team Member 4">
+                    <h3>Deepak</h3>
+                    <p>Video Editor</p>
+                    <p>Turns raw clips into engaging stories.
+                        Skilled in cinematic cuts and transitions.</p>
+                </div>
+            </div> -->
+            <!-- adddddddddddd -->
+            <div class="carousel-container">
+                <button class="nav-arrow left">‹</button>
+                <div class="carousel-track">
+                    <div class="team-card" data-index="0">
+                        <img src="./naveen2.jpg"
+                            alt="Team Member 1">
+                    </div>
+                    <div class="team-card" data-index="1">
+                        <img src="nitesh.jpg"
+                            alt="Team Member 2">
+                    </div>
+                    <div class="team-card" data-index="2">
+                        <img src="anoop.jpg"
+                            alt="Team Member 3">
+                    </div>
+                    <div class="team-card" data-index="3">
+                        <img src="mayank.jpg"
+                            alt="Team Member 4">
+                    </div>
+                    <div class="team-card" data-index="4">
+                        <img src="surendra.jpg" alt="Team Member 5">
+                    </div>
+                    <div class="team-card" data-index="5">
+                        <img src="deepak.jpg"
+                            alt="Team Member 6">
+                    </div>
+                </div>
+                <button class="nav-arrow right">›</button>
+            </div>
+
+            <div class="member-info">
+                <h2 class="member-name">David Kim</h2>
+                <p class="member-role">Founder</p>
+            </div>
+
+            <div class="dots">
+                <div class="dot active" data-index="0"></div>
+                <div class="dot" data-index="1"></div>
+                <div class="dot" data-index="2"></div>
+                <div class="dot" data-index="3"></div>
+                <div class="dot" data-index="4"></div>
+                <div class="dot" data-index="5"></div>
+            </div>
+        </section>
+        <!-- <section id="portfolio" class="section gallery" data-animate>
+            <h2><i class="fas fa-briefcase"></i> Our Portfolio</h2>
+            <p style="text-align: center; margin-bottom: 30px;">A glimpse into our recent creative ventures.</p>
+            <div class="gallery-controls">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="logo">Logo Design</button>
+                <button class="filter-btn" data-filter="youtube">YouTube</button>
+                <button class="filter-btn" data-filter="social">Social Media</button>
+                <button class="filter-btn" data-filter="video">Video Editing</button>
+            </div> -->
+        <!-- <div class="gallery-grid">
+                <div class="gallery-item" data-category="logo">
+                    <img data-src="https://via.placeholder.com/450x250/FF6B00/FFFFFF?text=Awesome+Logo" alt="Portfolio Image 1 - Logo Design">
+                    <div class="gallery-overlay">Logo Design Project</div>
+                </div>
+                <div class="gallery-item" data-category="youtube">
+                    <img data-src=".//" alt="Portfolio Image 2 - YouTube Thumbnail">
+                    <div class="gallery-overlay">YouTube Thumbnail</div>
+                </div>
+                <div class="gallery-item" data-category="social">
+                    <img data-src="https://via.placeholder.com/450x250/FF6B00/FFFFFF?text=Social+Campaign" alt="Portfolio Image 3 - Social Media Post">
+                    <div class="gallery-overlay">Social Media Post</div>
+                </div>
+                <div class="gallery-item" data-category="video">
+                    <img data-src="https://via.placeholder.com/450x250/FF6B00/FFFFFF?text=Video+Promo" alt="Portfolio Image 4 - Video Editing">
+                    <div class="gallery-overlay">Video Editing Sample</div>
+                </div>
+                <div class="gallery-item" data-category="logo">
+                    <img data-src="https://via.placeholder.com/450x250/FF6B00/FFFFFF?text=Brand+Identity" alt="Portfolio Image 5 - Branding">
+                    <div class="gallery-overlay">Brand Identity</div>
+                </div>
+                <div class="gallery-item" data-category="youtube">
+                    <img data-src="https://via.placeholder.com/450x250/FF6B00/FFFFFF?text=Gaming+Channel" alt="Portfolio Image 6 - Gaming Thumbnail">
+                    <div class="gallery-overlay">Gaming Channel Thumbnail</div>
+                </div>
+                <div class="gallery-item" data-category="social">
+                    <img data-src="https://via.placeholder.com/450x250/FF6B00/FFFFFF?text=Insta+Story" alt="Portfolio Image 7 - Instagram Story">
+                    <div class="gallery-overlay">Instagram Story Design</div>
+                </div>
+                <div class="gallery-item" data-category="video">
+                    <img data-src="https://via.placeholder.com/450x250/FF6B00/FFFFFF?text=Explainer+Video" alt="Portfolio Image 8 - Explainer Video">
+                    <div class="gallery-overlay">Explainer Video</div>
+                </div>
+                <div class="gallery-item" data-category="logo">
+                    <img data-src="https://via.placeholder.com/450x250/FF6B00/FFFFFF?text=Minimal+Logo" alt="Portfolio Image 9 - Minimal Logo">
+                    <div class="gallery-overlay">Minimalist Logo</div>
+                </div>
+            </div>
+        </section> -->
+
+        <section id="testimonials" class="section section-light testimonials" data-animate>
+            <h2><i class="fas fa-comments"></i> What Our Clients Say</h2>
+            <div class="swiper testimonial-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <p>"Adwik Creators transformed our social media presence! Their designs are vibrant and
+                                engaging. Highly recommend!"</p>
+                            <span>- Priya Sharma, Boutique Owner</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <p>"The team at Adwik did an outstanding job with our brand logo and strategy. Professional,
+                                creative, and timely delivery."</p>
+                            <span>- Raj Patel, Startup Founder</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <p>"Our YouTube channel's click-through rates have soared thanks to their amazing thumbnail
+                                designs. Truly exceptional work!"</p>
+                            <span>- Sneha Singh, Content Creator</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <p>"Their video editing skills are top-notch. They brought our raw footage to life with
+                                incredible flair and precision."</p>
+                            <span>- Vikrant Rao, Production House</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+
+        <section id="blog" class="section blog" data-animate>
+            <h2><i class="fas fa-newspaper"></i> Our Latest Articles</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Stay updated with our insights on digital marketing and
+                creative trends.</p>
+            <div class="blog-posts">
+                <div class="blog-post-item">
+                    <a href="#">The Power of Visual Branding in 2025</a>
+                    <div class="content-wrapper">
+                        <p>In today's fast-paced digital world, visual branding is more critical than ever. It's not
+                            just about a logo; it's about the consistent visual language that speaks volumes about your
+                            brand's personality and values. A strong visual identity ensures instant recognition and
+                            fosters trust with your audience...</p>
+                    </div>
+                    <button class="read-more-btn">Read More</button>
+                </div>
+                <div class="blog-post-item">
+                    <a href="#">Mastering Social Media Engagement Strategies</a>
+                    <div class="content-wrapper">
+                        <p>Engagement is the holy grail of social media marketing. It's not enough to just post content;
+                            you need to create conversations, build communities, and foster genuine interactions. We
+                            delve into actionable strategies that can significantly boost your engagement rates across
+                            all major platforms...</p>
+                    </div>
+                    <button class="read-more-btn">Read More</button>
+                </div>
+                <div class="blog-post-item">
+                    <a href="#">Video Marketing: Why It's Indispensable Now</a>
+                    <div class="content-wrapper">
+                        <p>Video content dominates the digital landscape, with consumption rates steadily climbing year
+                            over year. From short-form reels to long-form documentaries, video offers unparalleled
+                            storytelling capabilities. Discover how incorporating video marketing can elevate your
+                            brand's message and reach...</p>
+                    </div>
+                    <button class="read-more-btn">Read More</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section section-light faq" data-animate>
+            <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+            <details>
+                <summary>What services does Adwik Creators offer?</summary>
+                <p>Adwik Creators specializes in digital content creation, branding, and marketing services. This
+                    includes logo design, social media design, YouTube thumbnails, video editing, brand strategy, and
+                    influencer marketing.</p>
+            </details>
+            <details>
+                <summary>How can I get a quote for a custom project?</summary>
+                <p>For custom projects, please reach out to us via the contact form on our website, or directly through
+                    WhatsApp. Provide details about your requirements, and we'll get back to you with a personalized
+                    quote.</p>
+            </details>
+            <details>
+                <summary>What is your typical turnaround time for projects?</summary>
+                <p>Turnaround times vary depending on the complexity and scope of the project. We always discuss and
+                    agree upon realistic timelines with our clients upfront. For standard services, we aim for efficient
+                    and timely delivery.</p>
+            </details>
+            <details>
+                <summary>Do you offer ongoing support after project completion?</summary>
+                <p>Yes, we offer various levels of ongoing support depending on the service. For marketing plans,
+                    support is continuous. For design projects, minor revisions post-delivery are typically included.
+                </p>
+            </details>
+        </section>
+
+        <section id="contact" class="section contact" data-animate>
+            <h2><i class="fas fa-headset"></i> Get In Touch</h2>
+            <p style="text-align: center; margin-bottom: 40px; font-size: 1.15rem;">Have a project in mind? Let's
+                discuss how we can bring your ideas to life.</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Sikar, Rajasthan, India</p>
+                    <p><i class="fas fa-phone-alt"></i> <a href="tel:+919887420706">+91 9887420706</a></p>
+                    <p><i class="fas fa-envelope"></i> <a
+                            href="mailto:info@adwikcreators.com">adwikcreators@gmail.com</a></p>
+                    <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/919887420706" target="_blank">Chat on
+                            WhatsApp</a></p>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                            <span class="validation-icon"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                            <span class="validation-icon"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" placeholder="Subject" required>
+                            <span class="validation-icon"></span>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Your Message" rows="6" required></textarea>
+                            <span class="validation-icon"></span>
+                        </div>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <a href="https://wa.me/919887420706" class="whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61577735133079" target="_blank"><i
+                    class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/adwikcreators?igsh=MXU2MGZzYXlscGJ1Yg==" target="_blank"><i
+                    class="fab fa-instagram"></i></a>
+            <!-- <a href="https://www.linkedin.com/company/adwikcreators" target="_blank"><i class="fab fa-linkedin-in"></i></a> -->
+            <!-- <a href="https://www.youtube.com/adwikcreators" target="_blank"><i class="fab fa-youtube"></i></a> -->
+        </div>
+        <p>&copy; 2025 Adwik Creators. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
